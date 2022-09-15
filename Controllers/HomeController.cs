@@ -24,7 +24,7 @@ public class HomeController : Controller
 
     public IActionResult Index(int idS)
     {
-        ViewBag.Series =  BD.verInfoSerie(idS);
+        ViewBag.Series =  BD.TraerSeries();
         return View();
     }
 
@@ -35,7 +35,7 @@ public class HomeController : Controller
 
     public List<Series> mostrarSeriesAjax(int idS)
     {
-        return ViewBag.listaSeries = BD.TraerSeries(idS);
+        return ViewBag.serieActual = BD.verInfoSerie(idS);
     }
 
 

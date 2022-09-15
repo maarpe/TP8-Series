@@ -21,7 +21,7 @@ namespace TP8_Series
 
         public Series()
         {
-            
+
         }
 
         public int idSerie

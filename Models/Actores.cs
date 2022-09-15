@@ -14,8 +14,11 @@ namespace TP8_Series
             _nombreActor = nombreActor;
         }
 
-        public Actores(){
-
+        public Actores()
+        {
+            _idActor = 0;
+            _idSerie = 0;
+            _nombreActor = "";
         }
 
         public int idActor

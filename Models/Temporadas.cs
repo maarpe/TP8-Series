@@ -14,8 +14,12 @@ namespace TP8_Series
             _numTemporada = numTemporada;
             _tituloTemporada = tituloTemporada;
         }
-        public Temporadas(){
-
+        public Temporadas()
+        {
+            _idTemporada = 0;
+            _idSerie = 0;
+            _numTemporada = 0;
+            _tituloTemporada = "";
         }
 
         public int idTemporada
