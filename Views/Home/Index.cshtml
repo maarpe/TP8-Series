@@ -4,4 +4,29 @@
 
 <div class="text-center">
     <h1 class="display-4">Bienvenido a Cuevana</h1>
+    <a href="/cuevana.png"></a>
 </div>
+
+@{
+    @foreach (Series item in @ViewBag.listaSeries)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="@item.imagenSerie" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">@item.nombreSerie</h5>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalSerie" onclick="MostrarActor(@item.idSerie)">
+                    Ver Actores
+                </button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#ModalSerie" onclick="MostrarTemporadas(@item.idSerie)">
+                    Temporadas
+                </button>
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalSerie" onclick="MostrarMasInfo(@item.idSerie)">
+                    Más info
+                </button>
+            </div>
+        </div>
+
+
+    }
+
+}

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "kX0ATG9XA1fruim7t0NX5nTwiKNMH33miVhU2u5PI5s=",
+  "Hash": "IfztcjMvZT6qanxQ+cywt7gtMaNZE4T43MwOgS31dJ0=",
   "Source": "TP8-Series",
   "BasePath": "_content/TP8-Series",
   "Mode": "Default",
@@ -66,6 +66,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\47026770\\Desktop\\TP8-Series\\wwwroot\\cuevana.png",
+      "SourceId": "TP8-Series",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\47026770\\Desktop\\TP8-Series\\wwwroot\\",
+      "BasePath": "_content/TP8-Series",
+      "RelativePath": "cuevana.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\cuevana.png"
     },
     {
       "Identity": "C:\\Users\\47026770\\Desktop\\TP8-Series\\wwwroot\\favicon.ico",

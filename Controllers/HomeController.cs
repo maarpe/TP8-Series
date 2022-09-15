@@ -1,6 +1,15 @@
-﻿using System.Diagnostics;
+﻿using System.IO.Compression;
+using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using TP8_Series.Models;
+using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
 
 namespace TP8_Series.Controllers;
 
@@ -13,15 +22,40 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(int idS)
     {
+        ViewBag.Series =  BD.verInfoSerie(idS);
         return View();
     }
 
-    public IActionResult Privacy()
+    public List<Actores> mostrarActoresAjax(int idS)
     {
-        return View();
+        return ViewBag.listaActores = BD.TraerActores(idS);
     }
+
+    public List<Series> mostrarSeriesAjax(int idS)
+    {
+        return ViewBag.listaSeries = BD.TraerSeries(idS);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
