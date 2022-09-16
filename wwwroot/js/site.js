@@ -9,7 +9,7 @@
             success:
                 function(response)
                 {
-                    $("#nombreActor").html(response.nombreActor);                
+                    $("#contenidoModal").html(response.nombreActor);                
                 }
              
         })
@@ -21,12 +21,12 @@ function MostrarMasInfo(idS)
         {
             type: 'POST',
             dataType: 'JSON',
-            url: '/Home/MostrarSinopsisAjax',
+            url: '/Home/MostrarInfoSeriesAjax',
             data: { idSerie: idS },
             success:
                 function(response)
                 {
-                    $("#sinopsis").html(response.sinopsis);                
+                    $("#contenidoModal").html(response.sinopsis);           
                 }
              
         })
@@ -43,7 +43,11 @@ function MostrarTemporadas(idS)
             success:
                 function(response)
                 {
-                    $("#temporadas").html(response.temporadas);                
+                    var contenido = "";
+                    response.forEach(element => {
+                        contenido += "<li>" + element.tituloTemporada + "</li>";
+                    });
+                    $("#contenidoModal").html(contenido);
                 }
              
         })

@@ -28,14 +28,20 @@ public class HomeController : Controller
         return View();
     }
 
-    public List<Actores> mostrarActoresAjax(int idS)
+    public List<Actores> MostrarActoresAjax(int idSerie)
     {
-        return ViewBag.listaActores = BD.TraerActores(idS);
+        return BD.TraerActores(idSerie);
     }
 
-    public List<Series> mostrarSeriesAjax(int idS)
+    public Series MostrarInfoSeriesAjax(int idSerie)
     {
-        return ViewBag.serieActual = BD.verInfoSerie(idS);
+        return BD.verInfoSerie(idSerie);
+    }
+
+    public List<Temporadas> MostrarTemporadasAjax(int idSerie)
+    {
+        return BD.TraerTemporadas(idSerie);
+
     }
 
 

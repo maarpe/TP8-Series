@@ -16,14 +16,14 @@ namespace TP8_Series.Models
     public class BD
     {
 
-        private static string _connectionString = @"Server=A-PHZ2-CIDI-013; DataBase=BDSeries;Trusted_Connection=True;";
+        private static string _connectionString = @"Server=A-PHZ2-CIDI-002; DataBase=BDSeries;Trusted_Connection=True;";
         
-        public static List<Actores> TraerActores(int idActor)
+        public static List<Actores> TraerActores(int idS)
         {
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * from Actores where IdActor = @pidActor";
-                return db.Query<Actores>(sql, new {@pidActor = idActor }).ToList();
+                string sql = "SELECT * from Actores where idSerie = @pid";
+                return db.Query<Actores>(sql, new {pid = idS }).ToList();
             }
             
         }
@@ -41,8 +41,8 @@ namespace TP8_Series.Models
             Series serieActual = null;
             using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * FROM Series WHERE IdSerie = @idSerieActual";
-                serieActual = db.QueryFirstOrDefault<Series>(sql,new {@idSerieActual = idS});
+                string sql = "SELECT * FROM Series WHERE idSerie = @pid";
+                serieActual = db.QueryFirstOrDefault<Series>(sql,new {pid = idS});
             }
             return serieActual;
         }
@@ -50,8 +50,8 @@ namespace TP8_Series.Models
         {
            using (SqlConnection db = new SqlConnection(_connectionString))
             {
-                string sql = "SELECT * from Temporadas where IdTemporada = @pidTemporada";
-                return db.Query<Temporadas>(sql, new {@pidTemporada = idS }).ToList();
+                string sql = "SELECT * from Temporadas where idSerie = @pid";
+                return db.Query<Temporadas>(sql, new {pid = idS }).ToList();
             }
         }
 
